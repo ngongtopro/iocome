@@ -1,0 +1,31 @@
+Feature: 4 tab: trang chu, thong ke, lich su, cai dat
+         1 thanh navigator chua 4 tab tren va 1 button them item
+    Trang chu:  Icon
+                Name
+                1 cai lich show: ngay hien tai, tien chi, thu, luong tien chenh lech
+                danh sach cac item thu chi trong ngay
+                nut them item thu chi
+                keo xuong se thu nho icon, name lai
+                neu chua co item nao, co the nhan trong 1 khoang trong phia duoi de them item
+    Khi nhan vao nut them item:
+        1 button show danh sach cac loai thu chi: 1 tab show kieu chi, 1 tab show kieu tieu, 1 thanh search
+        1 textbox nhap so tien
+        1 dong text show thong tin kieu thu chi chi tiet hon cho button ben tren
+        1 dong chon thoi gian
+        1 dong chon ghi chu
+    Thong ke:
+                2 tab: chi, thu: 1 bieu do tron chi tiet the hien so tien theo loai chi, loai thu nhap theo thang
+    Lich su: show 2 tab thu, chi: 1 button chon thang: show items theo thang, item cua cac ngay ngan cach nhau bang 1 duong ke
+    Cai dat:
+        Chung:  Doi icon
+                Doi name
+                Nhac nho: button turn on, turn off alarm
+        Ho tro dev: Danh gia
+                    Phan hoi
+                    Chia se ung dung
+        Thong tin ung dung: Dieu khoan va dieu kien
+                            Chinh sach bao mat
+                            Giay phep
+                            Doi ngu phat trien
+                            Phien ban
+
