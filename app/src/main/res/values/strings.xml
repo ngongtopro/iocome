@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Quản lý ngân sách</string>
     <string name="test">Hello boss Tinh</string>
+    <string name="personal_infomation">Thông tin cá nhân</string>
+    <string name="about_app">Thông tin ứng dụng</string>
+    <string name="contact_us">Liên hệ</string>
+    <string name="general_settings">Cài đặt chung</string>
 </resources>
