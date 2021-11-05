@@ -5,4 +5,8 @@
     <string name="about_app">Thông tin ứng dụng</string>
     <string name="contact_us">Liên hệ</string>
     <string name="general_settings">Cài đặt chung</string>
+    <string name="home">Trang chủ</string>
+    <string name="statistics">Thống kê</string>
+    <string name="history">Lịch sử</string>
+    <string name="settings">Cài đặt</string>
 </resources>

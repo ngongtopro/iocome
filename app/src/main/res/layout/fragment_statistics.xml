@@ -42,6 +42,7 @@
             android:layout_height="250dp"
             android:background="@color/cardview_shadow_start_color">
             <LinearLayout
+                android:id="@+id/sum"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:weightSum="2"
@@ -62,6 +63,11 @@
                     android:textAlignment="textEnd"
                     android:textColor="@color/white"/>
             </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày"
+                android:layout_below="@+id/sum"/>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/list"
