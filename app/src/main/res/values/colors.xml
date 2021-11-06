@@ -10,4 +10,6 @@
     <color name="blue_light">#BAFBFB</color>
     <color name="light_mode">#FFF1F1F1</color>
     <color name="blue">#2186F3</color>
+    <color name="yellow">#FFC107</color>
+    <color name="gray">#8A8989</color>
 </resources>

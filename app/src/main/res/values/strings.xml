@@ -9,4 +9,9 @@
     <string name="statistics">Thống kê</string>
     <string name="history">Lịch sử</string>
     <string name="settings">Cài đặt</string>
+    <string name="expense">Chi tiêu</string>
+    <string name="income">Thu nhập</string>
+    <string name="sum">Tổng:</string>
+    <string name="date">Ngày</string>
+    <string name="currency_symbol">$</string>
 </resources>
