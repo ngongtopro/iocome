@@ -10,14 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.doubl3.manageiocome.R;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class HistoryFragment extends Fragment {
     private final String TAG = "HistoryFragment";
     private TabLayout mTabLayout;
-    private ViewPager mViewPager;
+    private ViewPager2 mViewPager;
+    private HistoryViewPagerAdapter mHistoryViewPagerAdapter;
 
     public HistoryFragment(){
 
@@ -40,5 +43,18 @@ public class HistoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         mTabLayout = getView().findViewById(R.id.history_tab_layout);
         mViewPager = getView().findViewById(R.id.history_view_pager);
+
+        mHistoryViewPagerAdapter = new HistoryViewPagerAdapter(this);
+        mViewPager.setAdapter(mHistoryViewPagerAdapter);
+        new TabLayoutMediator(mTabLayout, mViewPager, (tab, position) -> {
+            switch (position){
+                case 0:
+                    tab.setText(R.string.income);
+                    break;
+                case 1:
+                    tab.setText(R.string.used_money);
+                    break;
+            }
+        }).attach();
     }
 }
