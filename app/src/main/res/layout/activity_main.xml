@@ -21,6 +21,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/bg_bottom_nav">
-
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add_new_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:contentDescription="@string/add_new_item"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        android:outlineAmbientShadowColor="@color/yellow"
+        app:rippleColor="@color/blue"/>
+
 </RelativeLayout>

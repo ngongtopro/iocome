@@ -14,4 +14,5 @@
     <string name="sum">Tổng:</string>
     <string name="date">Ngày</string>
     <string name="currency_symbol">$</string>
+    <string name="add_new_item">Add new item</string>
 </resources>
