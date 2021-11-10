@@ -49,10 +49,10 @@ public class HistoryFragment extends Fragment {
         new TabLayoutMediator(mTabLayout, mViewPager, (tab, position) -> {
             switch (position){
                 case 0:
-                    tab.setText(R.string.income);
+                    tab.setText(R.string.expense);
                     break;
                 case 1:
-                    tab.setText(R.string.used_money);
+                    tab.setText(R.string.income);
                     break;
             }
         }).attach();

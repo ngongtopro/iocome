@@ -11,10 +11,10 @@ import androidx.fragment.app.Fragment;
 
 import com.doubl3.manageiocome.R;
 
-public class HistoryOutcomeFragment extends Fragment {
+public class HistoryExpenseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_history_outcome, container, false);
+        return inflater.inflate(R.layout.fragment_history_used_money, container, false);
     }
 }
