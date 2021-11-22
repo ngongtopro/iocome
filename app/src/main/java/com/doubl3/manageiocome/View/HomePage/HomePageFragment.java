@@ -6,9 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.doubl3.manageiocome.R;
+import com.doubl3.manageiocome.ViewModel.HomePageViewModel;
+import com.doubl3.manageiocome.databinding.FragmentHomePageBinding;
 
 public class HomePageFragment extends Fragment {
     private final String TAG = "HomePageFragment";
@@ -23,9 +27,16 @@ public class HomePageFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: ");
-        return inflater.inflate(R.layout.fragment_home_page, container, false);
+        FragmentHomePageBinding fragmentHPBinding = DataBindingUtil.inflate(inflater,
+                R.layout.fragment_home_page,
+                container,
+                false);
+        HomePageViewModel homePageViewModel = new HomePageViewModel();
+        View view = fragmentHPBinding.getRoot();
+        fragmentHPBinding.setHomePageViewModel(homePageViewModel);
+        return view;
     }
 }
