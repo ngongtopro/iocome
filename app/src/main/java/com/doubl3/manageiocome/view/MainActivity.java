@@ -1,4 +1,4 @@
-package com.doubl3.manageiocome.View;
+package com.doubl3.manageiocome.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.doubl3.manageiocome.R;
-import com.doubl3.manageiocome.View.History.HistoryFragment;
-import com.doubl3.manageiocome.View.HomePage.HomePageFragment;
-import com.doubl3.manageiocome.View.Settings.SettingsFragment;
-import com.doubl3.manageiocome.View.Statistics.StatisticsFragment;
+import com.doubl3.manageiocome.view.history.HistoryFragment;
+import com.doubl3.manageiocome.view.homepage.HomePageFragment;
+import com.doubl3.manageiocome.view.settings.SettingsFragment;
+import com.doubl3.manageiocome.view.statistics.StatisticsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

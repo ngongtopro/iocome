@@ -1,4 +1,4 @@
-package com.doubl3.manageiocome.View.HomePage;
+package com.doubl3.manageiocome.view.settings;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -10,9 +10,10 @@ import androidx.fragment.app.Fragment;
 
 import com.doubl3.manageiocome.R;
 
-public class HomePageFragment extends Fragment {
-    private final String TAG = "HomePageFragment";
-    public HomePageFragment(){
+public class SettingsFragment extends Fragment {
+    private final String TAG = "SettingsFragment";
+
+    public SettingsFragment(){
 
     }
 
@@ -26,6 +27,6 @@ public class HomePageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: ");
-        return inflater.inflate(R.layout.fragment_home_page, container, false);
+        return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 }

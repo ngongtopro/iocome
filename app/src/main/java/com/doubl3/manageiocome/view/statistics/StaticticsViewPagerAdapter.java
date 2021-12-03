@@ -1,4 +1,4 @@
-package com.doubl3.manageiocome.View.Statistics;
+package com.doubl3.manageiocome.view.statistics;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
