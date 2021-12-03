@@ -1,4 +1,4 @@
-package com.doubl3.manageiocome.View.History;
+package com.doubl3.manageiocome.view.history;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

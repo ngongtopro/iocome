@@ -1,4 +1,4 @@
-package com.doubl3.manageiocome.View.Statistics;
+package com.doubl3.manageiocome.view.history;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -15,10 +15,13 @@ import com.doubl3.manageiocome.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-public class StatisticsFragment extends Fragment {
-    private final String TAG = "StatisticsFragment";
+public class HistoryFragment extends Fragment {
+    private final String TAG = "HistoryFragment";
+    private TabLayout mTabLayout;
+    private ViewPager2 mViewPager;
+    private HistoryViewPagerAdapter mHistoryViewPagerAdapter;
 
-    public StatisticsFragment(){
+    public HistoryFragment(){
 
     }
 
@@ -32,16 +35,16 @@ public class StatisticsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView: ");
-        return inflater.inflate(R.layout.fragment_statistics, container, false);
+        return inflater.inflate(R.layout.fragment_history, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        TabLayout mTabLayout = getView().findViewById(R.id.tab_layout_statistics);
-        ViewPager2 mViewPager = getView().findViewById(R.id.view_pager_statistics);
+        mTabLayout = getView().findViewById(R.id.history_tab_layout);
+        mViewPager = getView().findViewById(R.id.history_view_pager);
 
-        StaticticsViewPagerAdapter mStatisticsViewPagerAdapter =
-                new StaticticsViewPagerAdapter(this);
-        mViewPager.setAdapter(mStatisticsViewPagerAdapter);
+        mHistoryViewPagerAdapter = new HistoryViewPagerAdapter(this);
+        mViewPager.setAdapter(mHistoryViewPagerAdapter);
         new TabLayoutMediator(mTabLayout, mViewPager, (tab, position) -> {
             switch (position){
                 case 0:

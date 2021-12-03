@@ -1,4 +1,4 @@
-package com.doubl3.manageiocome.View.History;
+package com.doubl3.manageiocome.view.history;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

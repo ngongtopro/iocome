@@ -1,4 +1,4 @@
-package com.doubl3.manageiocome.Model;
+package com.doubl3.manageiocome.model;
 
 public class User {
     private String name;

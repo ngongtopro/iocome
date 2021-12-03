@@ -1,4 +1,4 @@
-package com.doubl3.manageiocome.View.HomePage;
+package com.doubl3.manageiocome.view.homepage;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +11,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.doubl3.manageiocome.R;
-import com.doubl3.manageiocome.ViewModel.HomePageViewModel;
+import com.doubl3.manageiocome.viewmodel.HomePageViewModel;
 import com.doubl3.manageiocome.databinding.FragmentHomePageBinding;
 
 public class HomePageFragment extends Fragment {

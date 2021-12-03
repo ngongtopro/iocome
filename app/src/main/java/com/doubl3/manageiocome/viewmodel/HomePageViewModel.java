@@ -1,4 +1,4 @@
-package com.doubl3.manageiocome.ViewModel;
+package com.doubl3.manageiocome.viewmodel;
 
 import android.util.Log;
 
