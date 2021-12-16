@@ -47,11 +47,11 @@ public class HomePageFragment extends Fragment {
         View view = fragmentHPBinding.getRoot();
         fragmentHPBinding.setHomePageViewModel(homePageViewModel);
         // Recycle view
-        mRecycleViewItem = getActivity().findViewById(R.id.recycle_view_item);
+        mRecycleViewItem = view.findViewById(R.id.recycle_view_item);
         mItemAdapter = new ItemAdapter(getContext());
 
 //        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
-//        mRecycleViewItem.setLayoutManager(linearLayoutManager);
+        mRecycleViewItem.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         mItemAdapter.setData(getListItem());
         mRecycleViewItem.setAdapter(mItemAdapter);
