@@ -9,13 +9,22 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.doubl3.manageiocome.R;
+import com.doubl3.manageiocome.model.Item;
+import com.doubl3.manageiocome.model.ItemAdapter;
 import com.doubl3.manageiocome.viewmodel.HomePageViewModel;
 import com.doubl3.manageiocome.databinding.FragmentHomePageBinding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HomePageFragment extends Fragment {
     private final String TAG = "HomePageFragment";
+    private RecyclerView mRecycleViewItem;
+    private ItemAdapter mItemAdapter;
     public HomePageFragment(){
 
     }
@@ -37,6 +46,48 @@ public class HomePageFragment extends Fragment {
         HomePageViewModel homePageViewModel = new HomePageViewModel();
         View view = fragmentHPBinding.getRoot();
         fragmentHPBinding.setHomePageViewModel(homePageViewModel);
+        // Recycle view
+        mRecycleViewItem = getActivity().findViewById(R.id.recycle_view_item);
+        mItemAdapter = new ItemAdapter(getContext());
+
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
+//        mRecycleViewItem.setLayoutManager(linearLayoutManager);
+
+        mItemAdapter.setData(getListItem());
+        mRecycleViewItem.setAdapter(mItemAdapter);
         return view;
+    }
+
+    private List getListItem(){
+        List<Item> listItem = new ArrayList<>();
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        listItem.add(new Item("Bua trua", 30000, -1));
+        return listItem;
     }
 }
