@@ -6,9 +6,11 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 @Database(entities = {User.class}, version = 1, exportSchema = false)
 public abstract class UserRoomDatabase extends RoomDatabase {
@@ -25,10 +27,29 @@ public abstract class UserRoomDatabase extends RoomDatabase {
                 if (INSTANCE == null){
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             UserRoomDatabase.class, "user_database")
+                            .addCallback(INSTANCE.sRoomdatabaseCallback)
                             .build();
                 }
             }
         }
         return INSTANCE;
     }
+
+    private RoomDatabase.Callback sRoomdatabaseCallback = new Callback() {
+        @Override
+        public void onCreate(@NonNull SupportSQLiteDatabase db) {
+            super.onCreate(db);
+            //If you want to keep data through app restarts,
+            //comment out the following block
+            databaseWriteExcutor.execute(()->{
+                //Populate the database in the background.
+                //If you want to start with more users, just add them.
+                UserDao dao = INSTANCE.userDao();
+                dao.deleteAll();
+
+                User user = new User("Ngo", "Dat");
+                dao.insert(user);
+            });
+        }
+    };
 }

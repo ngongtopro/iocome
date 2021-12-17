@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/edit_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/material_emphasis_medium"
+        android:fontFamily="sans-serif-light"
+        android:hint="@string/add_user"
+        android:inputType="textAutoComplete"
+        android:layout_margin="5dp"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary"
+        android:text="@string/save"
+        android:layout_margin="10dp"
+        android:textColor="@color/design_default_color_secondary" />
+
+</LinearLayout>
