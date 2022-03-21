@@ -31,8 +31,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="36dp"
         android:contentDescription="@string/add_new_item"
-        android:src="@drawable/ic_baseline_add_circle_outline_24"
         android:outlineAmbientShadowColor="@color/yellow"
-        app:rippleColor="@color/blue"/>
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        app:rippleColor="@color/blue" />
 
 </RelativeLayout>

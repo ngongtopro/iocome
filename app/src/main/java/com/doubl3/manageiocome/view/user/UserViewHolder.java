@@ -20,7 +20,8 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
     public void bind(String text){
         userItemView.setText(text);
     }
-    static UserViewHolder create(ViewGroup parent){
+
+    public static UserViewHolder create(ViewGroup parent){
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recyclerview_item, parent, false);
         return new UserViewHolder(view);

@@ -10,17 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
+import dagger.android.support.DaggerFragment;
 
 import com.doubl3.manageiocome.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-public class StatisticsFragment extends Fragment {
+public class StatisticsFragment extends DaggerFragment {
     private final String TAG = "StatisticsFragment";
-
-    public StatisticsFragment(){
-
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

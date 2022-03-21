@@ -4,9 +4,12 @@ import android.app.Application;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import androidx.lifecycle.LiveData;
 
 public class UserRepository {
+
     private UserDao mUserDao;
     private LiveData<List<User>>    mAllUser;
 
@@ -14,6 +17,8 @@ public class UserRepository {
     // dependency. This adds complexity and much more code, and this sample is not about testing.
     // See the BasicSample in the android-architecture-components repository at
     // https://github.com/googlesamples
+
+    @Inject
     public UserRepository(Application application){
         UserRoomDatabase db = UserRoomDatabase.getDatabase(application);
         mUserDao = db.userDao();
@@ -26,7 +31,7 @@ public class UserRepository {
         return mAllUser;
     }
     public void insert(User user){
-        UserRoomDatabase.databaseWriteExcutor.execute(()->{
+        UserRoomDatabase.databaseWriteExecutor.execute(()->{
             mUserDao.insert(user);
         });
     }

@@ -10,8 +10,9 @@ import com.doubl3.manageiocome.R;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import dagger.android.support.DaggerFragment;
 
-public class StatisticsIncomeFragment extends Fragment {
+public class StatisticsIncomeFragment extends DaggerFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,

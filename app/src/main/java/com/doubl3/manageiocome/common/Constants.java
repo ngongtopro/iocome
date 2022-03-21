@@ -1,4 +1,4 @@
-package com.doubl3.manageiocome;
+package com.doubl3.manageiocome.common;
 
 public final class Constants {
     public static final int READ = 2;

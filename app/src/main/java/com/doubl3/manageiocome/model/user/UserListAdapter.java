@@ -1,8 +1,8 @@
-package com.doubl3.manageiocome.view.user;
+package com.doubl3.manageiocome.model.user;
 
 import android.view.ViewGroup;
 
-import com.doubl3.manageiocome.model.user.User;
+import com.doubl3.manageiocome.view.user.UserViewHolder;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
@@ -22,8 +22,8 @@ public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
-        User cur = getItem(position);
-        holder.bind(cur.getFirstName());
+        User current = getItem(position);
+        holder.bind(current.getFirstName());
     }
     public static class UserDiff extends DiffUtil.ItemCallback<User>{
 
@@ -38,4 +38,3 @@ public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
         }
     }
 }
-
