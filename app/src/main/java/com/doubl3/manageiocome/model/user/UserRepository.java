@@ -2,6 +2,8 @@ package com.doubl3.manageiocome.model.user;
 
 import android.app.Application;
 
+import com.doubl3.manageiocome.model.IOComeRoomDatabase;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -20,7 +22,7 @@ public class UserRepository {
 
     @Inject
     public UserRepository(Application application){
-        UserRoomDatabase db = UserRoomDatabase.getDatabase(application);
+        IOComeRoomDatabase db = IOComeRoomDatabase.getDatabase(application);
         mUserDao = db.userDao();
         mAllUser = mUserDao.getAlphabetizedUsers();
     }
@@ -31,7 +33,7 @@ public class UserRepository {
         return mAllUser;
     }
     public void insert(User user){
-        UserRoomDatabase.databaseWriteExecutor.execute(()->{
+        IOComeRoomDatabase.databaseWriteExecutor.execute(()->{
             mUserDao.insert(user);
         });
     }

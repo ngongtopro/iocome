@@ -25,6 +25,7 @@ public class UserListAdapter extends ListAdapter<User, UserViewHolder> {
         User current = getItem(position);
         holder.bind(current.getFirstName());
     }
+
     public static class UserDiff extends DiffUtil.ItemCallback<User>{
 
         @Override

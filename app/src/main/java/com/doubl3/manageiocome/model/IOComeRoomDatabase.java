@@ -1,8 +1,12 @@
-package com.doubl3.manageiocome.model.user;
+package com.doubl3.manageiocome.model;
 
 import android.content.Context;
 
-import java.util.concurrent.Executor;
+import com.doubl3.manageiocome.model.fund.Fund;
+import com.doubl3.manageiocome.model.fund.FundDao;
+import com.doubl3.manageiocome.model.user.User;
+import com.doubl3.manageiocome.model.user.UserDao;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -10,21 +14,26 @@ import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {User.class}, version = 1, exportSchema = false)
-public abstract class UserRoomDatabase extends RoomDatabase {
-    public abstract UserDao userDao();
+@Database(entities = {User.class, Fund.class}, version = 1, exportSchema = false)
+@TypeConverters({Converters.class})
+public abstract class IOComeRoomDatabase extends RoomDatabase {
 
-    private static volatile UserRoomDatabase INSTANCE;
+    public abstract UserDao userDao();
+    public abstract FundDao fundDao();
+
+    private static volatile IOComeRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
-    static final ExecutorService databaseWriteExecutor =
+
+    public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static UserRoomDatabase getDatabase(final Context context){
-        if(INSTANCE == null){
-            synchronized (UserRoomDatabase.class){
-                if (INSTANCE == null){
+    public static IOComeRoomDatabase getDatabase(final Context context) {
+        if(INSTANCE == null) {
+            synchronized (IOComeRoomDatabase.class) {
+                if(INSTANCE == null) {
                     INSTANCE = getInstance(context);
                 }
             }
@@ -32,9 +41,9 @@ public abstract class UserRoomDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-    public static UserRoomDatabase getInstance(Context context) {
+    private static IOComeRoomDatabase getInstance(Context context) {
         return Room.databaseBuilder(context.getApplicationContext(),
-                UserRoomDatabase.class, "user_database")
+                IOComeRoomDatabase.class, "iocome_database")
                 .addCallback(sRoomDatabaseCallback)
                 .build();
     }
@@ -45,11 +54,10 @@ public abstract class UserRoomDatabase extends RoomDatabase {
             super.onCreate(db);
             //If you want to keep data through app restarts,
             //comment out the following block
-            databaseWriteExecutor.execute(()->{
+            databaseWriteExecutor.execute(() -> {
                 //Populate the database in the background.
                 //If you want to start with more users, just add them.
                 UserDao dao = INSTANCE.userDao();
-                dao.deleteAll();
 
                 User user = new User("Tên", "Họ");
                 dao.insert(user);
